@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python \
     wget
 
-ENV RETHINKDB_VERSION 2.0.4
+ENV RETHINKDB_VERSION 2.1.1
 
 RUN wget http://download.rethinkdb.com/dist/rethinkdb-$RETHINKDB_VERSION.tgz && \
     tar xf rethinkdb-$RETHINKDB_VERSION.tgz && \
