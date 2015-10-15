@@ -14,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python \
     wget
 
-ENV RETHINKDB_VERSION 2.1.4
+ENV RETHINKDB_VERSION 2.1.5-2
 
 RUN wget http://download.rethinkdb.com/dist/rethinkdb-$RETHINKDB_VERSION.tgz && \
     tar xf rethinkdb-$RETHINKDB_VERSION.tgz && \
