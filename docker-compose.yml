@@ -1,0 +1,20 @@
+version: '2'
+services:
+  rethinkdb:
+    image: graanjonlo/rethinkdb:2.3.0
+    ports:
+     - "8080:8080"
+     - "28015:28015"
+     - "29015:29015"
+    expose:
+     - "8080"
+     - "28015"
+     - "29015"
+    volumes:
+     - "/home/andy/docker/data/rethinkdb:/data"
+     - "/home/andy/docker/logs/rethinkdb:/var/logs/rethinkdb"
+    environment:
+     - CANONICAL_ADDRESS=127.0.0.1
+     - JOIN_HOST=127.0.0.1
+     - CACHE_SIZE=1024
+     - SERVER_NAME=server1

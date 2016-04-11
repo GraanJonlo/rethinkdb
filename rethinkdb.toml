@@ -1,0 +1,9 @@
+[template]
+src = "rethinkdb.conf.tmpl"
+dest = "/rethinkdb.conf"
+keys = [
+    "CANONICAL_ADDRESS",
+    "JOIN_HOST",
+    "CACHE_SIZE",
+    "SERVER_NAME",
+]

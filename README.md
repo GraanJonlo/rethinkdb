@@ -1,8 +1,9 @@
+# What is RethinkDB
+
+RethinkDB is an open source, NoSQL, distributed document-oriented database. It stores JSON documents with dynamic schemas, and is designed to facilitate pushing real-time updates for query results to applications.
+
+> [wikipedia.org/wiki/RethinkDB](https://en.wikipedia.org/wiki/RethinkDB)
+
 # How to use this image
 
-## start a rethinkdb instance
-
-`docker run -d --name rethinkdb -p 8080:8080 -p 28015:28015 -p 29015:29015 -v /some/dir:/data graanjonlo/rethinkdb[:tag]`
-
-This image includes `EXPOSE 8080`, `28015` and `29015`, so standard container linking will make it automatically available to the linked containers. It also includes `VOLUME ["/data"]` so you can mount data volumes.
-
+See the supporting docker-compose.yml for an example configuration.
