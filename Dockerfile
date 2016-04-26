@@ -5,7 +5,9 @@ MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 /usr/local/bin/confd
 RUN chmod +x /usr/local/bin/confd
 
-RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+
+RUN apt-get install -y \
     build-essential \
     libboost-all-dev \
     libcurl4-openssl-dev \
@@ -19,7 +21,7 @@ RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" &&
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV RETHINKDB_VERSION 2.3.0
+ENV RETHINKDB_VERSION 2.3.1
 
 RUN wget http://download.rethinkdb.com/dist/rethinkdb-$RETHINKDB_VERSION.tgz && \
     tar xf rethinkdb-$RETHINKDB_VERSION.tgz && \
@@ -43,8 +45,6 @@ ADD rethinkdb.sh /etc/service/rethinkdb/run
 ADD rethinkdb.toml /etc/confd/conf.d/rethinkdb.toml
 ADD rethinkdb.conf.tmpl /etc/confd/templates/rethinkdb.conf.tmpl
 
-EXPOSE 8080
-EXPOSE 28015
-EXPOSE 29015
+EXPOSE 8080 28015 29015
 
 CMD ["/sbin/my_init", "--quiet"]
