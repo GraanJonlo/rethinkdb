@@ -21,7 +21,7 @@ RUN apt-get install -y \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV RETHINKDB_VERSION 2.3.3
+ENV RETHINKDB_VERSION 2.3.4
 
 RUN wget http://download.rethinkdb.com/dist/rethinkdb-$RETHINKDB_VERSION.tgz && \
     tar xf rethinkdb-$RETHINKDB_VERSION.tgz && \
