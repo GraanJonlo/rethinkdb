@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.18
+FROM phusion/baseimage:0.9.19
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
@@ -14,6 +14,7 @@ RUN apt-get install -y \
     libjemalloc-dev \
     libncurses5-dev \
     libprotobuf-dev \
+    libssl-dev \
     m4 \
     protobuf-compiler \
     python \
@@ -21,7 +22,7 @@ RUN apt-get install -y \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV RETHINKDB_VERSION 2.3.4
+ENV RETHINKDB_VERSION 2.3.5
 
 RUN wget http://download.rethinkdb.com/dist/rethinkdb-$RETHINKDB_VERSION.tgz && \
     tar xf rethinkdb-$RETHINKDB_VERSION.tgz && \
